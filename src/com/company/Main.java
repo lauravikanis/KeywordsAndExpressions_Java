@@ -1,25 +1,22 @@
 package com.company;
 
-import java.util.logging.Logger;
-
 public class Main {
 
     public static void main(String[] args) {
-        boolean gameOver = true;
         int score = 800;
         int levelCompleted = 5;
         int bonus = 100;
 
-        int highScore = calculateScore(gameOver, score, levelCompleted, bonus);
-        System.out.println(highScore + "is your highscore");
+        int highScore = calculateScore(true, score, levelCompleted, bonus);
+        System.out.println(highScore + "is your HighScoore");
 
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        calculateScore(true, score, levelCompleted, bonus);
 
         score = 10000;
         levelCompleted = 8;
         bonus = 200;
 
-        calculateScore(gameOver, score, levelCompleted, bonus);
+        calculateScore(true, score, levelCompleted, bonus);
 
 
         int highScorePosition = calculateHighScorePosition(1500);
@@ -37,8 +34,8 @@ public class Main {
         highScorePosition = calculateHighScorePosition(1000);
         displayHighScorePosition("Laura", highScorePosition);
 
-       // calcFeetAndInchesToCentimeters(10, 0);
-        // calcFeetAndInchesToCentimeters(-10, 0);
+        calcFeetAndInchesToCentimeters(10, 0);
+        calcFeetAndInchesToCentimeters(-10, 0);
         calcFeetAndInchesToCentimeters(-10);
     }
 
@@ -86,7 +83,7 @@ public class Main {
         }
         double centimeters = (feet * 12) * 2.54;
         centimeters += inches * 2.54;
-        System.out.println(feet + " feet " + inches + " iches = " + centimeters + " centimeters");
+        System.out.println(feet + " feet " + inches + " inches = " + centimeters + " centimeters");
         return centimeters;
     }
 
@@ -96,7 +93,7 @@ public class Main {
         }
         double feet =  (int) inches / 12;
         double remainingInches =  (int) inches % 12;
-        System.out.println(inches + " iches = " + feet + " feet and " + remainingInches + " inches");
+        System.out.println(inches + " inches = " + feet + " feet and " + remainingInches + " inches");
         return calcFeetAndInchesToCentimeters(feet, remainingInches);
     }
 
